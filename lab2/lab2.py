@@ -3,14 +3,14 @@ from sklearn.decomposition import PCA
 from gensim.downloader import load 
 
 
-# Dimensionality reduction using PCA 
+
 def rd(ems): 
    pca = PCA(n_components=2) 
    r = pca.fit_transform(ems) 
    return r 
 
 
-# Visualize word embeddings 
+
 def visualize(words, ems): 
    plt.figure(figsize=(10, 6)) 
    for i, word in enumerate(words): 
@@ -20,19 +20,18 @@ def visualize(words, ems):
    plt.show() 
 
 
-# Generate semantically similar words 
 def gsm(word): 
    sw = model.most_similar(word, topn=5) 
    for word, s in sw: 
       print(word, s) 
 
 
-# Load pre-trained GloVe model from Gensim API 
 print("Loading pre-trained GloVe model (50 dimensions)...") 
 model = load("glove-wiki-gigaword-50") 
 tech_words =["computer", "algorithm", "software", 
 "hardware", "code", 
 "cloud", "database", "network", "cybersecurity", "encryption"] 
+
 ems = [model[word] for word in tech_words] 
 e = rd(ems) 
 visualize(tech_words, e) 
