@@ -28,8 +28,7 @@ def gsm(word):
 
 print("Loading pre-trained GloVe model (50 dimensions)...") 
 model = load("glove-wiki-gigaword-50") 
-tech_words =["computer", "algorithm", "software", 
-"hardware", "code", 
+tech_words =["computer", "algorithm", "software", "hardware", "code", 
 "cloud", "database", "network", "cybersecurity", "encryption"] 
 
 ems = [model[word] for word in tech_words] 
