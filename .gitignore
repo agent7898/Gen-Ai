@@ -1,2 +1,6 @@
-/pdfs/
-/.venv/
+*
+!*/
+!*.py
+!.gitignore
+
+# Keep Python source files only. Everything else is ignored unless explicitly added above.

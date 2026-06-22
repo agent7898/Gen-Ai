@@ -28,13 +28,9 @@ the 1963 US Clean Air Act. International efforts have had mixed results: the Mon
 Protocol almost eliminated harmful ozone-depleting chemicals, while international action 
 on climate change has been less successful. """
 
-# Tokenize the input text
 inputs = tokenizer.encode(text, return_tensors="pt", max_length=512, truncation=True)
 
-# Generate the summary
-summary_ids = model.generate(inputs, max_length=50, min_length=25, 
-                             length_penalty=2.0, num_beams=4, early_stopping=True)
-
+summary_ids = model.generate(inputs, max_length=50, min_length=25, length_penalty=2.0, num_beams=4, early_stopping=True)
 summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
 
 print(summary) 

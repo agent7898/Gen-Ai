@@ -28,7 +28,6 @@ def replace_keyword_in_prompt(prompt,keyword,word_vectors,topn=1):
   print(f"\n Enriched Prompt:{enriched_prompt}") 
   return enriched_prompt 
 
-
 print("\n Loading GPT-4 model") 
 generator=pipeline("text-generation",model="gpt2") 
  
